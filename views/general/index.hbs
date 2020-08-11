@@ -1,0 +1,53 @@
+<section id="home">
+  <h1 class="h-primary">Meals and grocery
+    delivered.</h1>
+  <button class="btn">View Packages</button>
+</section>
+
+<section id="services">
+  <section id="eat">
+    <h1 class="h-primary center"> EAT and REPEAT</h1>
+  </section>
+</section>
+
+<section id="boxes">
+  <div class="container">
+    <div class="box">
+      <img src="/images/Online.jpg">
+      <h3>Order Online Food </h3>
+    </div>
+    <div class="box">
+      <img src="/images/online-grocery-store.jpg">
+      <h3>Order grocery from home. </h3>
+    </div>
+    <div class="box">
+      <img src="/images/fooddelivery.jpg">
+      <h3>Get your Order faster</h3>
+
+    </div>
+  </div>
+</section>
+<hr>
+<br>
+<br>
+<center>
+  <h1>Our top meals!</h1>
+</center>
+
+<section id="Boxes">
+  <div class="row">
+    {{#each meals}}
+    <div class="column">
+      <br>
+      <img src="data:image/{{this.mealImage.contentType}};base64,{{this.mealImage.data}}">
+      <b>
+        <center>{{this.name}}</center>
+      </b>
+      <br>
+      category: {{this.category}} <br>
+      Meal Count: {{this.mealCount}} <br>
+      Price: {{this.price}}
+    </div>
+    {{/each}}
+  </div>
+</section>

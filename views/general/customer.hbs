@@ -1,0 +1,32 @@
+<style>
+  .container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+</style>
+<form action="/store/user" method="POST">
+  <div class="container">
+    <h1>Create Account</h1>
+    <hr>
+    <label for="name1"><b> Name</b></label>
+    <input type="text" placeholder="Enter User Name" required name="username" id="N1">
+    <br>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" required name="email" id="email">
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" required name="password" id="psw">
+    <br>
+    <input type="text" name="role" value="customer" id="" style="display: none;">
+    <label for="psw-repeat"><b>Re-enter Password</b></label>
+    <input type="password" placeholder="Re-enter Password" required name="passwordRepeat" id="pswrepeat">
+    <hr>
+    <button type="submit" class="registerbtn">SIGN UP</button>
+  </div>
+</form>
+
+<div class="container signin">
+  <center>
+    <p>Already have an account? <a href="/login">Sign in</a>.</p>
+  </center>
+</div>

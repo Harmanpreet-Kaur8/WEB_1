@@ -1,0 +1,63 @@
+<style>
+    table {
+        background-color: white;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div class="container">
+    <h1><u>Your Cart</u></h1> <br>
+    {{#if cart}}
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+        {{#each cart}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.quantity}}</td>
+            <td>{{this.subtotal}}</td>
+        </tr>
+        {{/each}}
+        <tr>
+            <td></td>
+            <td></td>
+            <th>Total:</th>
+            <td>{{total}}</td>
+        </tr>
+    </table>
+    {{else}}
+    <h1>Your cart is empty.</h1>
+    <br><br>
+    <a href="/product/list" class="btn">Continue Shopping</a>
+    {{/if}}
+    <br><br><br>
+
+    {{#if cart}}
+    <div class="row">
+        <div class="column">
+            <a href="/clear/cart" class="btn">Clear Cart</a>
+        </div>
+        <div class="column">
+            <a href="/checkout" class="btn">Checkout</a>
+        </div>
+    </div>
+    {{/if}}
+
+</div>

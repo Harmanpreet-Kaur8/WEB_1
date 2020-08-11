@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body onload="myFunction()">
+    {{#if messages.success}}
+    <script>
+        function myFunction() {
+            swal({
+                title: "{{messages.success}}",
+                timer: 12000,
+                showConfirmButton: false
+            });
+        };
+    </script>
+    {{/if}}
+    {{#if messages.fail}}
+    <script>
+        function myFunction() {
+            swal({
+                title: "{{messages.fail}}",
+                timer: 12000,
+                showConfirmButton: false
+            });
+        };
+    </script>
+    {{/if}}
+    <header>
+        <nav>
+            <label class="logo">South Indian Cuisine</label>
+            <ul>
+                {{#if user}}
+                {{#if (eq user.role "customer")}}
+                <li><a href="/dashboard">Dashboard</a></li>
+                {{else}}
+                <li><a href="/clerk/dashboard">Dashboard</a></li>
+                {{/if}}
+                <li><a href="/product/list">Meal Packages</a> </li>
+                <li><a href="/logout">Logout</a></li>
+                {{#if (eq user.role "customer")}}
+                <li><a href="/mycart"><i class="fa fa-shopping-cart" style="font-size:36px"></i><span
+                            class="batch">{{cart_count}}</span></a></li>
+                {{/if}}
+                {{else}}
+                <li><a href="/">Home</a> </li>
+                <li><a href="/product/list">Meal Packages</a> </li>
+                <li><a href="/register/user">Customer Registration</a> </li>
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+
+            </ul>
+        </nav>
+    </header>
+    <main>{{{body}}}
+    </main>
+</body>
+
+<div class="cendiv">
+    <center>
+        <h1>Contact Us</h1>
+        <p style="color:chocolate; font-size:30px;">southindiancuisine1@gmail.com</p>
+    </center>
+    <div class="cendiv container-fluid">
+        <div class="row justify-content-center align-self-center">
+            <a class="col-md-1" title="Facebook" href="https://facebook.com" style="padding-top: 15px;"><img src="/images/social/fb.png"
+                    width="70px" height="70px" alt=""></a>
+            <a class="col-md-1" title="Instagram" href="https://instagram.com" style="padding-top: 15px;"><img
+                    src="/images/social/insta.png" width="70px" height="70px" alt=""></a>
+            <a class="col-md-1" title="Twitter" href="https://twitter.com" style="padding-top: 15px;"><img
+                    src="/images/social/twitter.png" width="70px" height="70px" alt=""></a>
+            <a class="col-md-1" title="YouTube" href="https://youtube.com" style="padding-top: 15px;"><img
+                    src="/images/social/youtube.png" width="70px" height="70px" alt=""></a>
+        </div>
+
+
+
+
+</html>

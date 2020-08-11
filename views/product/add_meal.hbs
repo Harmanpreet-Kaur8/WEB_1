@@ -1,0 +1,35 @@
+<style>
+    .container {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+    }
+</style>
+<form action="/store/meal/package" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <h1>Add Meal Package</h1>
+        <hr>
+        <label for="name"><b> Meal Package Name</b></label>
+        <input type="text" placeholder="Enter Name" required name="name" id="name">
+        <br>
+        <label for="price"><b>Price</b></label>
+        <input type="text" placeholder="Enter Price" required name="price" id="price">
+        <br>
+        <label for="desc"><b>Description</b></label>
+        <input type="text" placeholder="Enter Description" required name="description" id="desc">
+        <br>
+        <label for="cat"><b>Category</b></label>
+        <input type="text" placeholder="Enter Category" required name="category" id="cat">
+        <br>
+        <label for="mcount"><b>Number of Meals</b></label>
+        <input type="number" placeholder="Enter Number of Meals" required name="mealCount" id="mcount">
+        <br>
+        <label for="highlight"><b>Meal Pack Image</b></label>
+        <input type="file" name="mealImage" required accept=".gif,.jpg,.jpeg,.png">
+        <br>
+        <input type="checkbox" name="highlight" id="highlight">
+        <label for="highlight"><b>Add to Home Page</b></label>
+        <br><br>
+        <hr>
+        <button type="submit" class="registerbtn">Create Meal Pack</button>
+    </div>
+</form>

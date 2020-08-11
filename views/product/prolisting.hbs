@@ -1,0 +1,113 @@
+<section id="showcase">
+  <div class="container">
+    <h1>Our meal packages</h1>
+  </div>
+</section>
+<section id="line">
+  <b>
+    <p>Craving for Healthy food!
+      pick you package and choose you meal for a healthy life.
+    </p>
+  </b>
+</section>
+{{#if (eq user.role "clerk")}}
+<a href="/add/meal/package" class="btn btn-primary">Add Meal Package</a>
+{{/if}}
+<section id="Boxes">
+  <div class="row">
+    {{#each meals}}
+    <a href="/view/product/{{this._id}}">
+      <div class="column">
+        <br>
+        <img src="data:image/{{this.mealImage.contentType}};base64,{{this.mealImage.data}}">
+        <b>
+          <center>{{this.name}}</center>
+        </b>
+        <br>
+        category: {{this.category}} <br>
+        Meal Count: {{this.mealCount}} <br>
+        Price: {{this.price}} <br><br>
+        {{#if (eq ../user.role "clerk")}}
+        <a href="/edit/meal/package/{{this._id}}" class="btn btn-primary">Edit</a>
+        <a href="/delete/meal/package/{{this._id}}" class="btn btn-primary">Delete</a>
+        {{/if}}
+      </div>
+    </a>
+    {{/each}}
+  </div>
+</section>
+
+
+<style>
+  a {
+    color: black
+  }
+
+  a:hover {
+    background-color: transparent;
+  }
+
+  #showcase {
+    padding: 10px;
+    height: 200px;
+    background: url("./images/linofeast-background.jpg") no-repeat 0 -400px;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    color: #ffffff;
+  }
+
+  #showcase h1 {
+
+    ;
+    font-size: 55px;
+    margin-bottom: 10px;
+  }
+
+  #line {
+    height: 40px;
+    min-width: 10px;
+    font-style: italic;
+    background-color: green;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+
+  }
+
+  #line p {
+    padding: .5em;
+    font-style: bold;
+  }
+
+  #Boxes {
+    margin-top: 40px;
+
+  }
+
+  .column {
+    text-align: center;
+  }
+
+  .column img {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+  }
+
+  .row {
+    padding: 5px;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+</style>
