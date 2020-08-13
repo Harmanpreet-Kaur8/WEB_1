@@ -6,27 +6,30 @@
 </style>
 <form action="/store/meal/package" method="POST" enctype="multipart/form-data">
     <div class="container">
-        <h1>Add Meal Package</h1>
+        <h1>Package</h1>
         <hr>
         <label for="name"><b> Meal Package Name</b></label>
-        <input type="text" placeholder="Enter Name" required name="name" id="name">
+        <input type="text" placeholder="Enter Meal Name" required name="name" id="name">
         <br>
         <label for="price"><b>Price</b></label>
-        <input type="text" placeholder="Enter Price" required name="price" id="price">
+        <input type="text" placeholder="Enter the Price" required name="price" id="price">
         <br>
         <label for="desc"><b>Description</b></label>
-        <input type="text" placeholder="Enter Description" required name="description" id="desc">
+        <input type="text" placeholder="Enter the Description" required name="description" id="desc">
         <br>
         <label for="cat"><b>Category</b></label>
-        <input type="text" placeholder="Enter Category" required name="category" id="cat">
+        <input type="text" placeholder="Enter the Category" required name="category" id="cat">
         <br>
         <label for="mcount"><b>Number of Meals</b></label>
         <input type="number" placeholder="Enter Number of Meals" required name="mealCount" id="mcount">
         <br>
-        <label for="highlight"><b>Meal Pack Image</b></label>
+        <hr>
+        <label for="highlight"><b>Image </b></label>
         <input type="file" name="mealImage" required accept=".gif,.jpg,.jpeg,.png">
         <br>
         <input type="checkbox" name="highlight" id="highlight">
+        <br>
+        
         <label for="highlight"><b>Add to Home Page</b></label>
         <br><br>
         <hr>

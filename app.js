@@ -2,7 +2,6 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-// var logger = require('morgan');
 var mongoose = require('mongoose')
 var connectMongo = require("connect-mongo");
 var expressSession = require("express-session");
@@ -48,16 +47,15 @@ app.use(
 //connect to mongodb
 mongoose
   .connect("mongodb+srv://admin:Seneca@1@southindiancuisine.jpupt.mongodb.net/southindiancuisine?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB..."))
-  .catch(err => console.error("Could not connect to MongoDB..."));
+  .then(() => console.log("Connected to Database..."))
+  .catch(err => console.error("Could not connect to Database..."));
 
 //View Engine Setup(HandleBars)
 app.engine(
   "hbs",
   hbs({
     helpers: multihelpers,
-    // partialsDir: ["views/partials"],
-    extname: ".hbs",
+   extname: ".hbs",
     layoutsDir: "views/layouts",
     defaultLayout: "main"
   })
@@ -66,7 +64,6 @@ app.set('view engine', 'hbs');
 
 app.use(fileUpload());
 app.use(flash());
-// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

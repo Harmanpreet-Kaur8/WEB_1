@@ -18,12 +18,12 @@ module.exports = (req, res) => {
                         res.redirect("/clerk/dashboard")
                     }
                 } else {
-                    req.flash("fail", "Please check your credentials and try again.")
+                    req.flash("fail", "Please enter  valid values.")
                     res.redirect('/login')
                 }
             })
         } else {
-            req.flash("fail", "User does not found.")
+            req.flash("fail", "User is  not  found.")
             return res.redirect('/login')
         }
     })
